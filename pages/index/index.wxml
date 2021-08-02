@@ -45,6 +45,30 @@
       </swiper-item>
     </swiper>
   </view>
-
+  <!-- 五个导航区域 -->
+  <view>
+    <view class="navContainer">
+      <view class="navItem">
+        <text class="iconfont icon-meirituijian"></text>
+        <text>直播</text>
+      </view>
+      <view class="navItem">
+        <text class="iconfont icon-gedan1"></text>
+        <text>other页面</text>
+      </view>
+      <view class="navItem">
+        <text class="iconfont icon-icon-ranking"></text>
+        <text>排行榜</text>
+      </view>
+      <view class="navItem">
+        <text class="iconfont icon-diantai"></text>
+        <text>电台</text>
+      </view>
+      <view class="navItem">
+        <text class="iconfont icon-zhiboguankanliangbofangsheyingshexiangjixianxing"></text>
+        <text>直播</text>
+      </view>
+    </view>
+  </view>
 </view>
 

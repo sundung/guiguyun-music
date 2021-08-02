@@ -6,3 +6,26 @@
   width: 100%;
   height: 100%;
 }
+.container .navContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+.container .navContainer .navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .navContainer .navItem .iconfont {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  background-color: #f01313;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 50rpx;
+}
+.container .navContainer .navItem text {
+  font-size: 26rpx;
+  margin-top: 20rpx;
+}

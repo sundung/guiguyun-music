@@ -1,0 +1,2 @@
+/* 导入iconfont字体图标库*/
+@import './static/iconfont/iconfont.wxss'

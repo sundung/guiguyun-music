@@ -10,38 +10,8 @@
       circular
       interval="{{3000}}"
     >
-      <swiper-item>
-        <image
-          class=""
-          src="/static/images/nvsheng.jpg"
-          mode="aspectFit|aspectFill|widthFix"
-          lazy-load="false"
-          binderror=""
-          bindload=""
-        />
-
-      </swiper-item>
-      <swiper-item>
-        <image
-          class=""
-          src="/static/images/nvsheng.jpg"
-          mode="aspectFit|aspectFill|widthFix"
-          lazy-load="false"
-          binderror=""
-          bindload=""
-        />
-
-      </swiper-item>
-      <swiper-item>
-        <image
-          class=""
-          src="/static/images/nvsheng.jpg"
-          mode="aspectFit|aspectFill|widthFix"
-          lazy-load="false"
-          binderror=""
-          bindload=""
-        />
-
+      <swiper-item wx:for="{{bannersList}}" wx:key="bannerId">
+        <image src="{{item.pic}}" />
       </swiper-item>
     </swiper>
   </view>

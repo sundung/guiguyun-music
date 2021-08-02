@@ -1,3 +1,8 @@
-.app {
-  font-size: 60rpx;
+.container .banner {
+  width: 100%;
+  height: 300rpx;
+}
+.container .banner image {
+  width: 100%;
+  height: 100%;
 }

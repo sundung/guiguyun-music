@@ -2,7 +2,48 @@
 <view class="container">
   <!-- 轮播图 -->
   <view class="banner">
+    <swiper
+      indicator-dots
+      indicator-color='ivory'
+      indicator-active-color='#d43c33'
+      autoplay
+      circular
+      interval="{{3000}}"
+    >
+      <swiper-item>
+        <image
+          class=""
+          src="/static/images/nvsheng.jpg"
+          mode="aspectFit|aspectFill|widthFix"
+          lazy-load="false"
+          binderror=""
+          bindload=""
+        />
 
+      </swiper-item>
+      <swiper-item>
+        <image
+          class=""
+          src="/static/images/nvsheng.jpg"
+          mode="aspectFit|aspectFill|widthFix"
+          lazy-load="false"
+          binderror=""
+          bindload=""
+        />
+
+      </swiper-item>
+      <swiper-item>
+        <image
+          class=""
+          src="/static/images/nvsheng.jpg"
+          mode="aspectFit|aspectFill|widthFix"
+          lazy-load="false"
+          binderror=""
+          bindload=""
+        />
+
+      </swiper-item>
+    </swiper>
   </view>
 
 </view>

@@ -9,9 +9,11 @@
             height: 100%;
         }
     }
+    // 五个导航区域
     .navContainer {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        padding: 0 20rpx;
         .navItem {
             display: flex;
             flex-direction: column;
@@ -29,6 +31,54 @@
             text {
                 font-size: 26rpx;
                 margin-top: 20rpx;
+            }
+        }
+    }
+    // 推荐歌曲区域
+    .recommendContainner {
+        padding: 0 20rpx;
+        .header {
+            padding-bottom: 20rpx;
+            .title {
+                font-size: 32rpx;
+                line-height: 80rpx;
+                color:#666;
+            }
+            .more {
+                float:right;
+                border: 1rpx solid #000;
+                border-radius: 30rpx;
+                font-size: 24rpx;
+                padding: 10rpx;
+            }
+            
+        }
+    }
+    // 内容区域
+    .recommendScroll {
+        display: flex;
+        .scrollItem {
+            width: 200rpx;
+            margin-right: 20rpx;
+            image {
+                width: 200rpx;
+                height: 200rpx;
+                border-radius: 10rpx;
+            }
+            text {
+                font-size: 26rpx;
+                /* 单行文本溢出隐藏 省略号代替 */
+                /*display: block;*/
+                /*white-space: nowrap;*/
+                /*overflow: hidden;*/
+                /*text-overflow: ellipsis;*/
+
+                /* 多行文本溢出隐藏 省略号代替*/
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical; /*设置对其模式*/
+                -webkit-line-clamp: 2; /*设置多行的行数*/
             }
         }
     }

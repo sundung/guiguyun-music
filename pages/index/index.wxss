@@ -38,7 +38,7 @@
 }
 .container .recommendContainner .header .title {
   font-size: 32rpx;
-  line-height: 80rpx;
+  line-height: 40rpx;
   color: #666;
 }
 .container .recommendContainner .header .more {

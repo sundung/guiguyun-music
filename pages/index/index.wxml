@@ -58,28 +58,14 @@
       scroll-x
       enable-flex
     >
-      <view class="scrollItem">
-        <image src="/static/images/nvsheng.jpg" />
+      <view
+        class="scrollItem"
+        wx:for="{{recommendSongList}}"
+        wx:key="id"
+      >
+        <image src="{{item.picUrl}}" />
         <text >
-          的范德萨发的范德萨发的范德萨发的范德萨发
-        </text>
-      </view>
-      <view class="scrollItem">
-        <image src="/static/images/nvsheng.jpg" />
-        <text >
-          的范德萨发
-        </text>
-      </view>
-      <view class="scrollItem">
-        <image src="/static/images/nvsheng.jpg" />
-        <text >
-          的范德萨发
-        </text>
-      </view>
-      <view class="scrollItem">
-        <image src="/static/images/nvsheng.jpg" />
-        <text >
-          的范德萨发
+          {{item.name}}
         </text>
       </view>
     </scroll-view>

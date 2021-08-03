@@ -42,16 +42,8 @@
   </view>
   <!-- 推荐歌曲区域 -->
   <view class="recommendContainner">
-    <view class="header">
-      <text class="title">
-          推荐歌曲
-      </text>
-      <view>
-        <text>为你精心推荐</text>
-        <text class="more">查看更多</text>
-      </view>
-    </view>
-
+    <!-- 头部区域 -->
+    <NavHeader title="推荐歌曲" nav="为你精心推荐"></NavHeader>
     <!-- 内容区域 -->
     <scroll-view
       class="recommendScroll"
@@ -69,7 +61,15 @@
         </text>
       </view>
     </scroll-view>
+  </view>
+  <!-- 排行榜区域 -->
+  <view class="topList">
+    <!-- 头部区域 -->
+    <NavHeader title="排行榜" nav="热歌风向标"></NavHeader>
+    <!-- 内容区域 -->
+    <view class="content">
 
+    </view>
   </view>
 </view>
 

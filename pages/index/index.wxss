@@ -33,23 +33,9 @@
 .container .recommendContainner {
   padding: 0 20rpx;
 }
-.container .recommendContainner .header {
-  padding-bottom: 20rpx;
-}
-.container .recommendContainner .header .title {
-  font-size: 32rpx;
-  line-height: 40rpx;
-  color: #666;
-}
-.container .recommendContainner .header .more {
-  float: right;
-  border: 1rpx solid #000;
-  border-radius: 30rpx;
-  font-size: 24rpx;
-  padding: 10rpx;
-}
 .container .recommendScroll {
   display: flex;
+  height: 300rpx;
 }
 .container .recommendScroll .scrollItem {
   width: 200rpx;

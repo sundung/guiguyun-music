@@ -1,0 +1,22 @@
+.header {
+  height: 120rpx;
+  /* padding-bottom: 20rpx; */
+}
+.header .title {
+  font-size: 32rpx;
+  color: #666;
+  margin: 20rpx 0;
+}
+.header .content {
+  height: 40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .content .more {
+  float: right;
+  border: 1rpx solid #333;
+  padding: 10rpx 20rpx;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+}

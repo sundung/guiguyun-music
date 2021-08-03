@@ -1,0 +1,13 @@
+<!--components/NavHeader/NavHeader.wxml-->
+<view class="header">
+  <view class="title">
+    {{title}}
+  </view>
+  <view class="content">
+    <view>
+      {{nav}}
+    </view>
+    <view class="more">查看更多</view>
+  </view>
+</view>
+

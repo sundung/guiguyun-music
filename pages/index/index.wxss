@@ -62,6 +62,9 @@
   -webkit-line-clamp: 2;
   /*设置多行的行数*/
 }
+.container .topList {
+  padding: 0 20rpx;
+}
 .container .topList .topListSwiper {
   height: 400rpx;
 }
@@ -91,4 +94,8 @@
 .container .topList .topListSwiper .topListContent .topListItem .musicName {
   height: 100rpx;
   line-height: 100rpx;
+  min-width: 400rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

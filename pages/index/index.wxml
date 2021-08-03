@@ -80,6 +80,7 @@
             class="topListItem"
             wx:for="{{item.tracks}}"
             wx:for-item="topListItem"
+            wx:key="name"
           >
             <image src="{{topListItem.al.picUrl}}" />
             <text class="count">1</text>

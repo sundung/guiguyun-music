@@ -33,20 +33,20 @@
 .container .recommendContainner {
   padding: 0 20rpx;
 }
-.container .recommendScroll {
+.container .recommendContainner .recommendScroll {
   display: flex;
   height: 300rpx;
 }
-.container .recommendScroll .scrollItem {
+.container .recommendContainner .recommendScroll .scrollItem {
   width: 200rpx;
   margin-right: 20rpx;
 }
-.container .recommendScroll .scrollItem image {
+.container .recommendContainner .recommendScroll .scrollItem image {
   width: 200rpx;
   height: 200rpx;
   border-radius: 10rpx;
 }
-.container .recommendScroll .scrollItem text {
+.container .recommendContainner .recommendScroll .scrollItem text {
   font-size: 26rpx;
   /* 单行文本溢出隐藏 省略号代替 */
   /*display: block;*/
@@ -61,4 +61,34 @@
   /*设置对其模式*/
   -webkit-line-clamp: 2;
   /*设置多行的行数*/
+}
+.container .topList .topListSwiper {
+  height: 400rpx;
+}
+.container .topList .topListSwiper .topListContent {
+  width: 96%;
+  background: #fbfbfb;
+}
+.container .topList .topListSwiper .topListContent .title {
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+.container .topList .topListSwiper .topListContent .topListItem {
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.container .topList .topListSwiper .topListContent .topListItem image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 6rpx;
+}
+.container .topList .topListSwiper .topListContent .topListItem .count {
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.container .topList .topListSwiper .topListContent .topListItem .musicName {
+  height: 100rpx;
+  line-height: 100rpx;
 }

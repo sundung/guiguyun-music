@@ -37,7 +37,6 @@
     // 推荐歌曲区域
     .recommendContainner {
         padding: 0 20rpx;
-    }
     // 内容区域
     .recommendScroll {
         display: flex;
@@ -66,5 +65,44 @@
                 -webkit-line-clamp: 2; /*设置多行的行数*/
             }
         }
+    }
+    }
+    
+    // 排行榜
+    .topList {
+
+        // 内容区域
+        .topListSwiper {
+            // 设置 swiper的高度
+            height: 400rpx;
+            .topListContent{
+                width: 96%;
+                background: #fbfbfb;
+                .title {
+                    font-size: 30rpx;
+                    line-height: 80rpx;
+                }
+                .topListItem {
+                    display: flex;
+                    margin-bottom: 20rpx;
+                    image{
+                        width: 100rpx;
+                        height: 100rpx;
+                        border-radius: 6rpx;
+                    }
+                    .count {
+                        width: 100rpx;
+                        height: 100rpx;
+                        text-align: center;
+                        line-height: 100rpx;
+                    }
+                    .musicName{
+                        height: 100rpx;
+                        line-height: 100rpx;
+                    }
+                }
+            }
+        }
+        
     }
 }

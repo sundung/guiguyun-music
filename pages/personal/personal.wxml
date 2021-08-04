@@ -30,7 +30,13 @@
         </view>
     </view>
     <!-- 个人具体操作信息 -->
-    <view class="personalControl">
+    <view
+    class="personalControl" 
+    bindtouchstart="handleTouchStart" 
+    bindtouchmove="handleTouchMove" 
+    bindtouchend="handleTouchEnd"
+    style="transform: {{coverTransform}}; transition: {{coveTransition}}"
+    >
         <image class="" src="/static/images/personal/arc.png" />
         <view class="nav-box">
             <view class="nav-item">

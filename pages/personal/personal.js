@@ -1,4 +1,4 @@
-// pages/video/index.js
+// pages/personal/personal.js
 Page({
 
   /**

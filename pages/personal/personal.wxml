@@ -5,10 +5,10 @@
         <!-- 背景图片 -->
         <image class="bgImg" src="/static/images/personal/bgImg2.jpg"  />
         <!-- 头像区域 -->
-        <view class="avatar">
-            <image class="" src="/static/images/personal/missing-face.png"  />
+        <view class="avatar" bindtap="goToLogin">
+            <image class="" src='{{userInfo.avatarUrl?userInfo.avatarUrl:"/static/images/personal/missing-face.png"}}'  />
             <text class="name" >
-                请登录
+                {{userInfo.nickname?userInfo.nickname: '请登录'}}
             </text> 
         </view>
         <!-- vip区域 -->

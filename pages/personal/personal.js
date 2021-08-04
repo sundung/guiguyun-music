@@ -10,14 +10,23 @@ Page({
    */
   data: {
     coverTransform: 'translateY(200)rpx', // 下拉动画的移动距离
-    coveTransition:''
+    coveTransition:'', // 动画
+    userInfo:{} // 用户信息
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 进入页面判断当前用户是否登录
+    // 读取用户的基本信息
+    let userInfo = wx.getStorageSync('userInfo');
+    if(userInfo){ // 用户登录
+      // 更新userInfo的状态
+      this.setData({
+        userInfo: JSON.parse(userInfo)
+      })
+    }
   },
   handleTouchStart(event){
     // 获取起始坐标
@@ -48,6 +57,13 @@ Page({
       coverTransform: `translateY(0rpx)`,
       coveTransition: 'transform 1s linear'
     })
+  },
+  // 点击头像跳转到登录页面
+  goToLogin(){
+    wx.navigateTo({
+      url: '/pages/login/login',
+    });
+      
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

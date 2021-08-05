@@ -36,7 +36,7 @@ Page({
   async getUserPlayRecord(userID){
     let data = await request('/user/record',{uid:userID,type:0})
     let index = 0;
-    let userPlayRecord = data.allData.slice(0, 10).map(item => {
+    let userPlayRecord = data.allData && data.allData.slice(0, 10).map(item => {
       item.id = index++;
       return item;
     })

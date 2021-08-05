@@ -18,4 +18,24 @@
             color: #d43c33;
         }
     }
+    // 推荐列表区域
+    .scrollContainer {
+        display: flex;
+        white-space: nowrap;
+        height: 60rpx;
+        .scrollItem {
+            padding: 0 30rpx;
+            font-size: 28rpx;
+            height: 60rpx;
+            line-height: 60rpx;
+            .active {
+                border-bottom: 1rpx solid #d43c33;
+            }
+        }
+        // 防止 激活样式不在
+        .scrollContent {
+            height: 60rpx;
+            box-sizing: border-box;
+        }
+    }
 }

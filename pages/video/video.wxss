@@ -16,3 +16,21 @@
   margin: 0 20rpx;
   color: #d43c33;
 }
+.videoContainer .scrollContainer {
+  display: flex;
+  white-space: nowrap;
+  height: 60rpx;
+}
+.videoContainer .scrollContainer .scrollItem {
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.videoContainer .scrollContainer .scrollItem .active {
+  border-bottom: 1rpx solid #d43c33;
+}
+.videoContainer .scrollContainer .scrollContent {
+  height: 60rpx;
+  box-sizing: border-box;
+}

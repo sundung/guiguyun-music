@@ -8,4 +8,19 @@
     </view>
     <image src="/static/images/logo.png"></image>
   </view>
+  <!-- 推荐导航区域 -->
+  <scroll-view
+      scroll-x
+      class="scrollContainer"
+      enable-flex
+      scroll-into-view="{{'scroll' + navId}}"
+      scroll-with-animation
+  >
+    <view id="{{'scroll' + item.id}}" class="scrollItem" wx:for="{{videoGroupList}}" wx:key="id">
+      <view class="scrollContent {{navId == item.id?'active': ''}}" bindtap="changeNav" id="{{item.id}}" data-id="{{item.id}}">
+        {{item.name}}
+      </view>
+    </view>
+  </scroll-view>
+    
 </view>

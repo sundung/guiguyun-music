@@ -30,14 +30,26 @@ Page({
   changeNav(event){
     let navId = event.currentTarget.id; // 通过id向event传参的时候如果传的是number会自动转换成string
     // let navId = event.currentTarget.dataset.id;
-    this.setData({
-      navId
+    // 加载loading状态
+    wx.showLoading({
+      title:'正在加载'
     })
+    this.setData({
+      navId,
+      videoList:[] // 清空当前视频列表
+    })
+    // 点击切换时加载数据
+    this.getVideoList(this.data.navId)
   },
   // 获取推荐导航下对应的视频信息,注意该接口需要用户登录
   async getVideoList(navId){
     let data = await request('/video/group',{id:navId});
-    console.log(data)
+     // 关闭loading
+    if(data) {
+      // 关闭消息提示框
+      wx.hideLoading();
+    }
+    // 设置一个id用作遍历的 key
     let index = 0;
     let videoList = data.datas.map(item => {
       item.id = index++;

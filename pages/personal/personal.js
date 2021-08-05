@@ -3,6 +3,8 @@ let startY = 0; // 手指起始的坐标
 let moveY = 0; // 手指移动的坐标
 let moveDistance = 0; // 手指移动的距离
 
+// 导入网络请求
+import request from '../../api/request'
 Page({
 
   /**
@@ -11,7 +13,8 @@ Page({
   data: {
     coverTransform: 'translateY(200)rpx', // 下拉动画的移动距离
     coveTransition:'', // 动画
-    userInfo:{} // 用户信息
+    userInfo:{}, // 用户信息
+    userPlayRecord:[] // 用户播放记录数据
   },
 
   /**
@@ -27,6 +30,20 @@ Page({
         userInfo: JSON.parse(userInfo)
       })
     }
+    this.getUserPlayRecord(this.data.userInfo.userId);
+  },
+  // 获取用户播放记录
+  async getUserPlayRecord(userID){
+    let data = await request('/user/record',{uid:userID,type:0})
+    let index = 0;
+    let userPlayRecord = data.allData.slice(0, 10).map(item => {
+      item.id = index++;
+      return item;
+    })
+    console.log(userPlayRecord)
+    this.setData({
+      userPlayRecord
+    })
   },
   handleTouchStart(event){
     // 获取起始坐标

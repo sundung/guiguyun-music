@@ -1,7 +1,7 @@
 .personalConntainer {
     width: 100%;
     height: 100%;
-    position: fixed;
+    // position: fixed;
     // 个人信息区域
     .userSection {
         position: relative;
@@ -97,7 +97,7 @@
         margin-top: -40rpx;
         padding: 0 40rpx;
         box-sizing: border-box;
-        image {
+        .image {
             position: absolute;
             left: 0;
             top: -30rpx;
@@ -139,6 +139,19 @@
                 color: #333;
                 line-height: 80rpx;
                }
+            }
+            // 播放记录
+            .recentScroll {
+                display: flex;
+                height: 200rpx;
+                .recentItem {
+                    image {
+                        width: 200rpx;
+                        height: 200rpx;
+                        margin-right:20rpx;
+                        border-radius: 10rpx;
+                    }
+                }
             }
             .nav-box {
                 display: flex;

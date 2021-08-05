@@ -1,7 +1,6 @@
 .personalConntainer {
   width: 100%;
   height: 100%;
-  position: fixed;
 }
 .personalConntainer .userSection {
   position: relative;
@@ -89,7 +88,7 @@
   padding: 0 40rpx;
   box-sizing: border-box;
 }
-.personalConntainer .personalControl image {
+.personalConntainer .personalControl .image {
   position: absolute;
   left: 0;
   top: -30rpx;
@@ -132,6 +131,16 @@
   font-size: 26rpx;
   color: #333;
   line-height: 80rpx;
+}
+.personalConntainer .personalControl .personalContent .recentScroll {
+  display: flex;
+  height: 200rpx;
+}
+.personalConntainer .personalControl .personalContent .recentScroll .recentItem image {
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
 }
 .personalConntainer .personalControl .personalContent .nav-box {
   display: flex;

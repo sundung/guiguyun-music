@@ -37,7 +37,7 @@
     bindtouchend="handleTouchEnd"
     style="transform: {{coverTransform}}; transition: {{coveTransition}}"
     >
-        <image class="" src="/static/images/personal/arc.png" />
+        <image class="image" src="/static/images/personal/arc.png" />
         <view class="nav-box">
             <view class="nav-item">
                 <text class="iconfont icon-xiaoxi" ></text>
@@ -60,8 +60,14 @@
     <view class="personalContent">
         <view class="title">
             <text class="first">最近播放</text>
-            <text class="second">暂无播放记录</text>
+            <!-- <text class="second">暂无播放记录</text> -->
         </view>
+        <scroll-view wx:if="{{userPlayRecord.length}}" scroll-x class="recentScroll" enable-flex>
+          <view class="recentItem" wx:for="{{userPlayRecord}}" wx:key="id">
+            <image class="" src="{{item.song.al.picUrl}}"/>             
+          </view>
+        </scroll-view>
+        <view wx:else>暂无播放记录</view>
         <view class="nav-box">
             <view class="item">
                 <text>我的音乐</text>

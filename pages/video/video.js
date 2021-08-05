@@ -38,6 +38,14 @@ Page({
   async getVideoList(navId){
     let data = await request('/video/group',{id:navId});
     console.log(data)
+    let index = 0;
+    let videoList = data.datas.map(item => {
+      item.id = index++;
+      return item;
+    })
+    this.setData({
+      videoList
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

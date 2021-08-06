@@ -30,6 +30,7 @@
             poster="{{item.data.coverUrl}}" 
             id="{{item.data.vid}}" 
             bindplay='handlePlay' 
+            object-fit="cover"
             src="{{item.data.urlInfo.url}}"
             wx:if="{{videoId == item.data.vid}}"
             ></video>

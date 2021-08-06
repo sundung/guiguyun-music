@@ -44,6 +44,7 @@ Page({
   // 获取推荐导航下对应的视频信息,注意该接口需要用户登录
   async getVideoList(navId){
     let data = await request('/video/group',{id:navId});
+    console.log(data);
      // 关闭loading
     if(data) {
       // 关闭消息提示框

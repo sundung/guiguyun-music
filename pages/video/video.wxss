@@ -45,3 +45,54 @@
   height: 320rpx;
   border-radius: 10rpx;
 }
+.videoContainer .scrollVideo .videoItem .scrollVideoContent .text {
+  font-size: 28rpx;
+  width: 440rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.videoContainer .scrollVideo .videoItem .scrollVideoContent .footer {
+  height: 100rpx;
+  line-height: 100rpx;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+.videoContainer .scrollVideo .videoItem .scrollVideoContent .footer .left .avatar {
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.videoContainer .scrollVideo .videoItem .scrollVideoContent .footer .left .nickname {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+}
+.videoContainer .scrollVideo .videoItem .scrollVideoContent .footer .right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.videoContainer .scrollVideo .videoItem .scrollVideoContent .footer .right .item {
+  position: relative;
+  width: 70rpx ;
+}
+.videoContainer .scrollVideo .videoItem .scrollVideoContent .footer .right .item .count {
+  position: absolute;
+  top: -30rpx;
+  font-size: 20rpx;
+}
+.videoContainer .scrollVideo .videoItem .scrollVideoContent .footer .right button {
+  width: 20rpx;
+  display: inline;
+  padding: 0;
+  background-color: transparent;
+  border-color: transparent;
+}
+.videoContainer .scrollVideo .videoItem .scrollVideoContent .footer .right button:after {
+  border: none;
+}

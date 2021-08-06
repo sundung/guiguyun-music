@@ -26,7 +26,28 @@
     <scroll-view class="scrollVideo"  scroll-y >
         <view class="videoItem" wx:for="{{videoList}}" wx:key="id">
             <video src="{{item.data.urlInfo.url}}"></video>
+            <view class="scrollVideoContent">
+                <text class="text">{{item.data.title}}</text>
+                <view class="footer">
+                    <view class="left">
+                        <image class="avatar" src="{{item.data.creator.avatarUrl}}" /> 
+                        <text class="nickname">{{item.data.creator.nickname}}</text>
+                    </view>
+                    <view class="right">
+                        <text class="item">
+                            <text class="iconfont icon-buoumaotubiao15"></text>
+                            <text class="count">{{item.data.praisedCount}}</text>
+                        </text>
+                        <text class="item">
+                            <text class="iconfont icon-pinglun1"></text>
+                            <text class="count">{{item.data.commentCount}}</text>
+                        </text>
+                        <button open-type="share" class="item btn">
+                            <text class="iconfont icon-gengduo"></text>
+                        </button>
+                    </view>
+                </view>
+            </view>
         </view>
     </scroll-view>
-      
 </view>

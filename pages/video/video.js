@@ -76,6 +76,8 @@ Page({
     })
     // 创建控制video标签的实例对象
     this.videoContext = wx.createVideoContext(vid);
+    // 自动播放
+    this.videoContext.play();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

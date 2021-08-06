@@ -26,11 +26,15 @@
     <scroll-view class="scrollVideo"  scroll-y >
         <view class="videoItem" wx:for="{{videoList}}" wx:key="id">
             <video 
+            class="common"
             poster="{{item.data.coverUrl}}" 
             id="{{item.data.vid}}" 
             bindplay='handlePlay' 
             src="{{item.data.urlInfo.url}}"
+            wx:if="{{videoId == item.data.vid}}"
             ></video>
+            <image wx:else id="{{item.data.vid}}" class="common" src="{{item.data.coverUrl}}" bindtap='handlePlay'  />
+              
             <view class="scrollVideoContent">
                 <text class="text">{{item.data.title}}</text>
                 <view class="footer">

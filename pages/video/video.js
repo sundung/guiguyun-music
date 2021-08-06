@@ -9,6 +9,7 @@ Page({
     videoGroupList:[], // 获取视频标签列表数组
     navId:'', // 控制激活样式的标识
     videoList:[], // 视频数组
+    videoId:''// 视频播放的id
   },
   /**
    * 生命周期函数--监听页面加载
@@ -69,6 +70,10 @@ Page({
     // 判断当前id不是第一个视频
     this.vid && this.vid != event.currentTarget.id && this.videoContext && this.videoContext.stop();
     this.vid = vid;
+    // 更新视频id
+    this.setData({
+      videoId:vid
+    })
     // 创建控制video标签的实例对象
     this.videoContext = wx.createVideoContext(vid);
   },

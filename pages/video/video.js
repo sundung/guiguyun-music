@@ -68,8 +68,8 @@ Page({
     let vid = event.currentTarget.id;
 
     // 判断当前id不是第一个视频
-    this.vid && this.vid != event.currentTarget.id && this.videoContext && this.videoContext.stop();
-    this.vid = vid;
+    // this.vid && this.vid != event.currentTarget.id && this.videoContext && this.videoContext.stop();
+    // this.vid = vid;
     // 更新视频id
     this.setData({
       videoId:vid

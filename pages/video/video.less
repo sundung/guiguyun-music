@@ -40,7 +40,8 @@
     }
     // 视频区域
     .scrollVideo{
-        
+        // 固定导航区域,需要给 scroll-view 的高度,需要动态计算
+        height: calc(100vh - 152rpx);
         margin-top: 10rpx;
         .videoItem {
             padding: 0 3%;

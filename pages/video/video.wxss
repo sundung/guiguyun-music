@@ -35,6 +35,7 @@
   box-sizing: border-box;
 }
 .videoContainer .scrollVideo {
+  height: calc(100vh - 152rpx);
   margin-top: 10rpx;
 }
 .videoContainer .scrollVideo .videoItem {

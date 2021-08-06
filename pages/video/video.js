@@ -60,6 +60,18 @@ Page({
       videoList
     })
   },
+  // 处理多个视频播放的问题
+  handlePlay(event){
+    console.log(event.currentTarget.id)
+    // 1.获取上一个视频的id
+    let vid = event.currentTarget.id;
+
+    // 判断当前id不是第一个视频
+    this.vid && this.vid != event.currentTarget.id && this.videoContext && this.videoContext.stop();
+    this.vid = vid;
+    // 创建控制video标签的实例对象
+    this.videoContext = wx.createVideoContext(vid);
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

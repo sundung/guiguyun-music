@@ -25,7 +25,7 @@
 <!-- 视频区域 -->
     <scroll-view class="scrollVideo"  scroll-y >
         <view class="videoItem" wx:for="{{videoList}}" wx:key="id">
-            <video src="{{item.data.urlInfo.url}}"></video>
+            <video id="{{item.data.vid}}" bindplay='handlePlay' src="{{item.data.urlInfo.url}}"></video>
             <view class="scrollVideoContent">
                 <text class="text">{{item.data.title}}</text>
                 <view class="footer">

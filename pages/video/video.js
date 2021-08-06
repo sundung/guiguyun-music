@@ -107,6 +107,15 @@ Page({
       videoUpdateTime
     })
   },
+  // 视频播放结束调用的回调
+  handleEnded(event){
+    // 移除记录播放时长数组中当前视频的对象
+    let {videoUpdateTime} = this.data;
+    videoUpdateTime.splice(videoUpdateTime.findIndex(item => item.vid === event.currentTarget.id), 1);
+    this.setData({
+      videoUpdateTime
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

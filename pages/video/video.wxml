@@ -34,6 +34,7 @@
             src="{{item.data.urlInfo.url}}"
             wx:if="{{videoId == item.data.vid}}"
             bindtimeupdate="handleTimeUpdate"
+            bindended="handleEnded"
             ></video>
             <image wx:else id="{{item.data.vid}}" class="common" src="{{item.data.coverUrl}}" bindtap='handlePlay'  />
               

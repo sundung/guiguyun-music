@@ -9,7 +9,8 @@ Page({
     videoGroupList:[], // 获取视频标签列表数组
     navId:'', // 控制激活样式的标识
     videoList:[], // 视频数组
-    videoId:''// 视频播放的id
+    videoId:'',// 视频播放的id
+    videoUpdateTime: [], // 记录video播放的时长
   },
   /**
    * 生命周期函数--监听页面加载
@@ -76,8 +77,35 @@ Page({
     })
     // 创建控制video标签的实例对象
     this.videoContext = wx.createVideoContext(vid);
+    // 判断当前的视频之前是否播放过，是否有播放记录, 如果有，跳转至指定的播放位置
+    let {videoUpdateTime} = this.data;
+    let videoItem = videoUpdateTime.find(item => item.vid === vid);
+    if(videoItem){
+      this.videoContext.seek(videoItem.currentTime);
+    }
     // 自动播放
     this.videoContext.play();
+  },
+  // 跳转到播放过视频的对应时长
+  handleTimeUpdate(event){
+    let videoTimeObj = {vid: event.currentTarget.id, currentTime: event.detail.currentTime};
+    let {videoUpdateTime} = this.data;
+    /*
+    * 思路： 判断记录播放时长的videoUpdateTime数组中是否有当前视频的播放记录
+    *   1. 如果有，在原有的播放记录中修改播放时间为当前的播放时间
+    *   2. 如果没有，需要在数组中添加当前视频的播放对象
+    *
+    * */
+    let videoItem = videoUpdateTime.find(item => item.vid === videoTimeObj.vid);
+    if(videoItem){ // 之前有
+      videoItem.currentTime = event.detail.currentTime;
+    }else { // 之前没有
+      videoUpdateTime.push(videoTimeObj);
+    }
+    // 更新videoUpdateTime的状态
+    this.setData({
+      videoUpdateTime
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

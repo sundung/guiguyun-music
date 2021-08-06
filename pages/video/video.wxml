@@ -33,6 +33,7 @@
             object-fit="cover"
             src="{{item.data.urlInfo.url}}"
             wx:if="{{videoId == item.data.vid}}"
+            bindtimeupdate="handleTimeUpdate"
             ></video>
             <image wx:else id="{{item.data.vid}}" class="common" src="{{item.data.coverUrl}}" bindtap='handlePlay'  />
               

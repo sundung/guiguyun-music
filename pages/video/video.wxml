@@ -23,7 +23,13 @@
     </view>
   </scroll-view>
 <!-- 视频区域 -->
-    <scroll-view class="scrollVideo"  scroll-y >
+    <scroll-view 
+    class="scrollVideo"  
+    scroll-y 
+    bindrefresherrefresh="handleRefresher"
+    refresher-enabled
+    refresher-triggered="{{isTriggered}}"
+    >
         <view class="videoItem" wx:for="{{videoList}}" wx:key="id">
             <video 
             class="common"

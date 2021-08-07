@@ -11,6 +11,7 @@ Page({
     videoList:[], // 视频数组
     videoId:'',// 视频播放的id
     videoUpdateTime: [], // 记录video播放的时长
+    isTriggered:false // 控制下拉刷新的标识
   },
   /**
    * 生命周期函数--监听页面加载
@@ -59,7 +60,8 @@ Page({
       return item;
     })
     this.setData({
-      videoList
+      videoList,
+      isTriggered:false // 控制下拉刷新的标识
     })
   },
   // 处理多个视频播放的问题
@@ -115,6 +117,12 @@ Page({
     this.setData({
       videoUpdateTime
     })
+  },
+  // 自定义下拉刷新事件
+  handleRefresher(){
+    console.log('下拉刷新');
+    // 再次发请求，获取最新的视频列表数据
+    this.getVideoList(this.data.navId);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

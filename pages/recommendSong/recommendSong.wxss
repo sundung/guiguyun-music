@@ -22,3 +22,40 @@
 .recommendSongContainer .header .date .day {
   font-size: 46rpx;
 }
+.recommendSongContainer .musicListContainer {
+  position: relative;
+  top: -20rpx;
+  padding: 0 20rpx;
+  border-radius: 30rpx;
+  background: #fff;
+}
+.recommendSongContainer .musicListContainer .musicListHeader {
+  display: flex;
+  justify-content: space-between;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.recommendSongContainer .musicListContainer .musicListScrollContainer {
+  height: calc(100vh - 380rpx);
+}
+.recommendSongContainer .musicListContainer .musicListScrollContainer .scrollItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.recommendSongContainer .musicListContainer .musicListScrollContainer .scrollItem .image {
+  width: 80rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+.recommendSongContainer .musicListContainer .musicListScrollContainer .scrollItem .musicInfo {
+  display: flex;
+  flex-direction: column;
+}
+.recommendSongContainer .musicListContainer .musicListScrollContainer .scrollItem .iconfont {
+  position: absolute;
+  right: 0;
+  width: 40rpx;
+  height: 40rpx;
+}

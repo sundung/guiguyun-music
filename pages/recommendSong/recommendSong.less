@@ -25,4 +25,44 @@
             }
         }
     }
+    // 列表区域
+    .musicListContainer {
+        position: relative;
+        top: -20rpx;
+        padding: 0 20rpx;
+        border-radius: 30rpx;
+        background: #fff;
+        // 头部区域
+        .musicListHeader {
+            display: flex;
+            justify-content: space-between;
+            height: 80rpx;
+            line-height: 80rpx;
+        }
+        // 歌曲详情信息
+        .musicListScrollContainer {
+            height: calc(100vh - 380rpx);
+            .scrollItem {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20rpx;
+                .image {
+                    width: 80rpx;
+                    height: 100rpx;
+                    border-radius: 10rpx;
+                    margin-right:20rpx;
+                }
+                .musicInfo {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .iconfont {
+                    position: absolute;
+                    right: 0;
+                    width: 40rpx;
+                    height: 40rpx;
+                }
+            }
+        }
+    }
 }

@@ -47,7 +47,6 @@ Page({
   // 点击推荐歌曲跳转详情页面
   goToMusicDetail(event){
     let {song} = event.currentTarget.dataset;
-    console.log(song)
     wx.navigateTo({
       // 不能直接将song对象作为参数传递，长度过长，会被自动截取掉
       // url: '/pages/songDetail/songDetail?songPackage=' + JSON.stringify(songPackage)

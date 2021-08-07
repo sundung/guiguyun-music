@@ -1,4 +1,6 @@
 // pages/songDetail/songDetail.js
+// 导入网络请求
+import request from '../../api/request'
 Page({
 
   /**
@@ -6,19 +8,33 @@ Page({
    */
   data: {
     isPlay:false, // 是否播放状态
+    song:{}, // 歌曲详情对象
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
+    let musicId = options.musicId
+    // 调用歌曲详情
+    this.getSongDetail(musicId);
   },
   // 控制音乐的播放与暂停
   handleMusicPlay(){
     let isPlay = ! this.data.isPlay
     this.setData({
       isPlay
+    })
+  },
+  // 获取歌曲详情页面
+  async getSongDetail(musicId){
+    let data = await request('/song/detail',{ids:musicId})
+    this.setData({
+      song:data.songs[0]
+    })
+    // 动态设置导航标题
+    wx.setNavigationBarTitle({
+      title:this.data.song.name
     })
   },
   /**

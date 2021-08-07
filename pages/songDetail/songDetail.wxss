@@ -40,6 +40,28 @@ page {
   width: 598rpx;
   height: 598rpx;
 }
+ /*
+  @keyframes: 设置动画帧
+      1) from to
+      - 使用于简单的动画，只有起始帧和结束帧
+      - 北京 - 上海  直达
+      2) 百分比
+      - 多用于复杂的动画，动画不止两帧
+      - 北京 - 上海 ---> 北京 -- 天津 --- 深圳 --- 上海
+      - 0% - 100%, 可以任意拆分
+
+*/
+  @keyframes disc {
+    from {
+    transform: rotate(0deg);
+    }
+    to {
+    transform: rotate(360deg);
+    }
+}
+.discAnimation {
+  animation: disc 4s linear infinite;
+}
 .songDetailContainer .discContainer .disc {
   width: 598rpx;
   height: 598rpx;

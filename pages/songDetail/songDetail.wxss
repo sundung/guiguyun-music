@@ -31,6 +31,9 @@ page {
   transform: rotate(-20deg);
   transition: transform 1s;
 }
+.songDetailContainer .needleRotate {
+  transform: rotate(0deg);
+}
 .songDetailContainer .discContainer {
   position: relative;
   top: -170rpx;

@@ -61,6 +61,7 @@ page {
 }
 .discAnimation {
   animation: disc 4s linear infinite;
+  /* 延迟磁盘动画执行 */
   animation-delay: 1s;
 }
 .songDetailContainer .discContainer .disc {

@@ -61,6 +61,7 @@ page {
 }
 .discAnimation {
   animation: disc 4s linear infinite;
+  animation-delay: 1s;
 }
 .songDetailContainer .discContainer .disc {
   width: 598rpx;

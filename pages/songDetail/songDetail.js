@@ -9,6 +9,8 @@ Page({
   data: {
     isPlay:false, // 是否播放状态
     song:{}, // 歌曲详情对象
+    musicId:'', //歌曲id
+    musicLink:'' // 歌曲连接
   },
 
   /**
@@ -16,15 +18,36 @@ Page({
    */
   onLoad: function (options) {
     let musicId = options.musicId
+    this.setData({
+      musicId
+    })
     // 调用歌曲详情
     this.getSongDetail(musicId);
+    // 创建控制音乐播放的实例
+    this.backgroundAudioManager = wx.getBackgroundAudioManager();
+    // 监视音乐播放/暂停/停止
+    this.backgroundAudioManager.onPlay(() => {
+      this.changePlayState(true);
+    });
+    this.backgroundAudioManager.onPause(() => {
+      this.changePlayState(false);
+    });
+    this.backgroundAudioManager.onStop(() => {
+      this.changePlayState(false);
+    });
+  },
+  // 修改播放状态的功能函数
+  changePlayState(isPlay){
+    // 修改音乐是否的状态
+    this.setData({
+      isPlay
+    })
   },
   // 控制音乐的播放与暂停
   handleMusicPlay(){
     let isPlay = ! this.data.isPlay
-    this.setData({
-      isPlay
-    })
+    let {musicId, musicLink} = this.data;
+    this.musicControl(isPlay, musicId, musicLink);
   },
   // 获取歌曲详情页面
   async getSongDetail(musicId){
@@ -36,6 +59,27 @@ Page({
     wx.setNavigationBarTitle({
       title:this.data.song.name
     })
+  },
+  // 控制音乐播放/暂停的功能函数
+  async musicControl(isPlay, musicId, musicLink){
+    if(isPlay){ // 音乐播放
+      if(!musicLink){
+        // 获取音乐播放链接
+        let musicLinkData = await request('/song/url', {id: musicId});
+        // 注意 不能直接在setData中更新,异步获取不到数据
+        musicLink = musicLinkData.data[0].url
+        // 更新歌曲连接
+        this.setData({
+          musicLink
+        })
+      }
+      
+      this.backgroundAudioManager.src = musicLink;
+      this.backgroundAudioManager.title = this.data.song.name;
+    }else { // 暂停音乐
+      this.backgroundAudioManager.pause();
+    }
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

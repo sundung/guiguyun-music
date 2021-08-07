@@ -1,4 +1,6 @@
 // pages/recommendSong/recommendSong.js
+// 导入网络请求
+import request from '../../api/request'
 Page({
 
   /**
@@ -7,18 +9,41 @@ Page({
   data: {
     day:'', // 日
     month:'', // 月
+    recommendList:[], // 歌曲推荐列表数据
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 判断用户是否登录
+    let userInfo = wx.getStorageSync('userInfo');
+    if(!userInfo){
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none',
+        success: () => {
+          // 跳转至登录界面
+          wx.reLaunch({
+            url: '/pages/login/login'
+          })
+        }
+      })
+    }
     this.setData({
       day: new Date().getDate(),
       month:new Date().getMonth() + 1
     })
+    // 调用每日推荐歌曲列表数据
+    this.getOneDayMusicList();
   },
-
+  // 获取每日推荐歌曲列表数据
+  async getOneDayMusicList(){
+    let data = await request('/recommend/songs');
+    this.setData({
+      recommendList: data.recommend
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

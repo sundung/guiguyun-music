@@ -17,111 +17,14 @@
     </view>
     <!-- 歌曲列表 -->
     <scroll-view class="musicListScrollContainer" scroll-y="false">
-        <view class="scrollItem">
-            <image class="image" src="/static/images/recommendSong/recommendSong.jpg" />
+        <view class="scrollItem" wx:for="{{recommendList}}" wx:key="id">
+            <image class="image" src="{{item.album.picUrl}}" />
             <view class="musicInfo">
-                <text class="musicName">sad撒</text>
-                <text class="author">大萨达撒</text>
+                <text class="musicName">{{item.name}}</text>
+                <text class="author">{{item.artists[0].name}}</text>
             </view>
             <text class="iconfont icon-gengduo"></text>
         </view>
-         <view class="scrollItem">
-            <image class="image" src="/static/images/recommendSong/recommendSong.jpg" />
-            <view class="musicInfo">
-                <text class="musicName">sad撒</text>
-                <text class="author">大萨达撒</text>
-            </view>
-            <text class="iconfont icon-gengduo"></text>
-        </view>
-         <view class="scrollItem">
-            <image class="image" src="/static/images/recommendSong/recommendSong.jpg" />
-            <view class="musicInfo">
-                <text class="musicName">sad撒</text>
-                <text class="author">大萨达撒</text>
-            </view>
-            <text class="iconfont icon-gengduo"></text>
-        </view>
-         <view class="scrollItem">
-            <image class="image" src="/static/images/recommendSong/recommendSong.jpg" />
-            <view class="musicInfo">
-                <text class="musicName">sad撒</text>
-                <text class="author">大萨达撒</text>
-            </view>
-            <text class="iconfont icon-gengduo"></text>
-        </view>
-         <view class="scrollItem">
-            <image class="image" src="/static/images/recommendSong/recommendSong.jpg" />
-            <view class="musicInfo">
-                <text class="musicName">sad撒</text>
-                <text class="author">大萨达撒</text>
-            </view>
-            <text class="iconfont icon-gengduo"></text>
-        </view>
-         <view class="scrollItem">
-            <image class="image" src="/static/images/recommendSong/recommendSong.jpg" />
-            <view class="musicInfo">
-                <text class="musicName">sad撒</text>
-                <text class="author">大萨达撒</text>
-            </view>
-            <text class="iconfont icon-gengduo"></text>
-        </view>
-         <view class="scrollItem">
-            <image class="image" src="/static/images/recommendSong/recommendSong.jpg" />
-            <view class="musicInfo">
-                <text class="musicName">sad撒</text>
-                <text class="author">大萨达撒</text>
-            </view>
-            <text class="iconfont icon-gengduo"></text>
-        </view>
-         <view class="scrollItem">
-            <image class="image" src="/static/images/recommendSong/recommendSong.jpg" />
-            <view class="musicInfo">
-                <text class="musicName">sad撒</text>
-                <text class="author">大萨达撒</text>
-            </view>
-            <text class="iconfont icon-gengduo"></text>
-        </view>
-         <view class="scrollItem">
-            <image class="image" src="/static/images/recommendSong/recommendSong.jpg" />
-            <view class="musicInfo">
-                <text class="musicName">sad撒</text>
-                <text class="author">大萨达撒</text>
-            </view>
-            <text class="iconfont icon-gengduo"></text>
-        </view>
-         <view class="scrollItem">
-            <image class="image" src="/static/images/recommendSong/recommendSong.jpg" />
-            <view class="musicInfo">
-                <text class="musicName">sad撒</text>
-                <text class="author">大萨达撒</text>
-            </view>
-            <text class="iconfont icon-gengduo"></text>
-        </view>
-         <view class="scrollItem">
-            <image class="image" src="/static/images/recommendSong/recommendSong.jpg" />
-            <view class="musicInfo">
-                <text class="musicName">sad撒</text>
-                <text class="author">大萨达撒</text>
-            </view>
-            <text class="iconfont icon-gengduo"></text>
-        </view>
-         <view class="scrollItem">
-            <image class="image" src="/static/images/recommendSong/recommendSong.jpg" />
-            <view class="musicInfo">
-                <text class="musicName">sad撒</text>
-                <text class="author">大萨达撒</text>
-            </view>
-            <text class="iconfont icon-gengduo"></text>
-        </view>
-         <view class="scrollItem">
-            <image class="image" src="/static/images/recommendSong/recommendSong.jpg" />
-            <view class="musicInfo">
-                <text class="musicName">sad撒</text>
-                <text class="author">大萨达撒</text>
-            </view>
-            <text class="iconfont icon-gengduo"></text>
-        </view>
-        
     </scroll-view>
   </view>
   

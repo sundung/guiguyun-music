@@ -60,5 +60,11 @@ Page({
     // this.setData({
     //   topList: resultArr
     // })
+  },
+  // 点击每日推荐跳转到每日推荐页面
+  goToRecommendSong(){
+    wx.navigateTo({
+      url: '/pages/recommendSong/recommendSong',
+    })
   }
 })

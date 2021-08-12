@@ -11,6 +11,10 @@
                 {{userInfo.nickname?userInfo.nickname: '请登录'}}
             </text> 
         </view>
+        <!-- 退出登录按钮 -->
+        <view class="loginOut" wx:if="{{userInfo.nickname}}" bind:tap="loginOut">
+            退出登录
+        </view>
         <!-- vip区域 -->
         <view class="vip-card-box">
             <!-- 背景图片 -->

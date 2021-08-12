@@ -82,6 +82,28 @@ Page({
     });
       
   },
+  // 退出操作
+  async loginOut(){
+    console.log('object')
+    let data = await request('/logout');
+    console.log(data)
+    if(data.code == 200) {
+      wx.showToast({
+        title: '退出登录成功',
+        icon: 'none',
+        duration: 1500,
+        mask: false,
+        success: (result) => {
+          wx.clearStorageSync('userInfo');
+          this.setData({
+            userInfo:{},
+            userPlayRecord:[]
+          })
+        }
+      });
+        
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

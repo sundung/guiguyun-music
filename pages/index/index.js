@@ -66,5 +66,11 @@ Page({
     wx.navigateTo({
       url: '/pages/recommendSong/recommendSong',
     })
+  },
+  // 点击排行榜按钮跳转排行榜
+  goToTopList(){
+    wx.navigateTo({
+      url:'/pages/topList/topList'
+    })
   }
 })

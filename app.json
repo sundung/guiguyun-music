@@ -5,9 +5,8 @@
     "pages/songDetail/songDetail",
     "pages/video/video",
     "pages/login/login",
-    "pages/personal/personal"
-   
-    
+    "pages/personal/personal",
+    "pages/topList/topList"
   ],
   "window": {
     "navigationBarBackgroundColor": "#d43c33",

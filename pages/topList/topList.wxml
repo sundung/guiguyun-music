@@ -1,0 +1,32 @@
+<!--pages/topList/topList.wxml-->
+<view class="topListContainer">
+    <view class="topListContent" wx:for="{{topList}}" wx:key="name" >
+        <!-- 时间 -->
+        <view class="updateFrequency">{{item.updateFrequency}}</view>
+        <view class="left">
+            <view class="title">{{item.name}}</view>
+            <image class="" src="{{item.coverImgUrl}}" />
+        </view>
+        <view class="right" >
+            <view class="musicItem" wx:for="{{item.tracks}}" wx:key="inex">
+                <text class="index">{{index + 1}}.  </text>
+                <text class="musicName">{{item.first}}</text>-
+                <text class="songer">{{item.second}}</text>
+            </view>
+        </view>
+    </view>
+    <!-- 曲风榜 -->
+    <view class="songType">
+        <view class="title">曲风榜</view>
+        <view class="songTypeContent" >
+            <view class="item" wx:for="{{songTypeList}}" wx:key="id">
+                <!-- 更新时间 -->
+                <view class="time">{{item.updateFrequency}}</view>
+                <!-- 图片 -->
+                <image class="" src="{{item.coverImgUrl}}"  />
+                <!-- 名字 -->
+                <view>{{item.name}}</view>
+            </view>
+        </view>
+    </view>
+</view>

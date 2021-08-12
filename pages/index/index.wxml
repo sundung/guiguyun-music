@@ -26,7 +26,7 @@
         <text class="iconfont icon-gedan1"></text>
         <text>other页面</text>
       </view>
-      <view class="navItem">
+      <view class="navItem" bind:tap="goToTopList">
         <text class="iconfont icon-icon-ranking"></text>
         <text>排行榜</text>
       </view>

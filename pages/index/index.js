@@ -72,5 +72,11 @@ Page({
     wx.navigateTo({
       url:'/pages/topList/topList'
     })
+  },
+  // 点击私人FM
+  goToPersonalFM(){
+    wx.navigateTo({
+      url: '/pages/personalFM/personalFM',
+    })
   }
 })

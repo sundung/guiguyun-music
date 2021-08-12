@@ -1,0 +1,23 @@
+<!--pages/personalFM/personalFM.wxml-->
+<view class="personalFMContainer">
+   
+  <view class="content" wx:for="{{personal_fm}}" wx:key="id">
+    <image class="musicImg" src="{{item.album.picUrl}}" />
+    <view class="comm">
+        <view >{{item.name}}</view>
+        <view class="artistsName">{{item.artists[0].name}} ></view>
+    </view>
+  </view>
+  <!-- 底部控制播放区域 -->
+  <view class="musicControl">
+    <text class="iconfont icon-iconsMusicyemianbofangmoshiShuffle"></text>
+
+    <text class="iconfont icon-shangyishou"></text>
+
+    <text class="iconfont {{isPlay?'icon-zanting': 'icon-bofang'}} big" bindtap="handleMusicPlay"></text>
+
+    <text class="iconfont icon-next"></text>
+
+    <text class="iconfont icon-iconsMusicyemianbofangmoshiPlayList"></text>
+  </view>
+</view>

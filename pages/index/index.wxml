@@ -30,9 +30,9 @@
         <text class="iconfont icon-icon-ranking"></text>
         <text>排行榜</text>
       </view>
-      <view class="navItem">
+      <view class="navItem" bindtap="goToPersonalFM">
         <text class="iconfont icon-diantai"></text>
-        <text>电台</text>
+        <text>私人FM</text>
       </view>
       <view class="navItem">
         <text class="iconfont icon-zhiboguankanliangbofangsheyingshexiangjixianxing"></text>

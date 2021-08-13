@@ -15,7 +15,7 @@
     <text class="iconfont icon-shangyishou"></text>
 
     <text class="iconfont {{isPlay?'icon-zanting': 'icon-bofang'}} big" bindtap="handleMusicPlay"></text>
-
+    
     <text class="iconfont icon-next"></text>
 
     <text class="iconfont icon-iconsMusicyemianbofangmoshiPlayList"></text>

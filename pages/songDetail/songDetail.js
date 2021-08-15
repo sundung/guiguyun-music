@@ -1,6 +1,9 @@
 // pages/songDetail/songDetail.js
 // 导入网络请求
 import request from '../../api/request'
+
+// 获取全局实例
+const appInstance = getApp();
 Page({
 
   /**
@@ -23,10 +26,19 @@ Page({
     })
     // 调用歌曲详情
     this.getSongDetail(musicId);
+    // 判断当前音乐是否播放过,如果有马上修改播放状态
+    if(appInstance.globalData.isMusicPlay && appInstance.globalData.musicID === musicId) {
+      // 修改当前你页面的播放状态
+      this.setData({
+        isPlay:true
+      })
+    }
     // 创建控制音乐播放的实例
     this.backgroundAudioManager = wx.getBackgroundAudioManager();
     // 监视音乐播放/暂停/停止
     this.backgroundAudioManager.onPlay(() => {
+      // 当用户点击播放按钮时,记录当前音乐id到全局data中
+      appInstance.globalData.musicID = musicId;
       this.changePlayState(true);
     });
     this.backgroundAudioManager.onPause(() => {
@@ -42,6 +54,8 @@ Page({
     this.setData({
       isPlay
     })
+    // 控制全局的播放状态
+    appInstance.globalData.isMusicPlay = isPlay;
   },
   // 控制音乐的播放与暂停
   handleMusicPlay(){

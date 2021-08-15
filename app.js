@@ -13,7 +13,9 @@ App({
       }
     })
   },
-  globalData: {
-    userInfo: null
-  }
+  // 存储全局数据
+  globalData:{
+    isMusicPlay:false, // 音乐是否在播放
+    musicID:'', // 对应的音乐id
+  },
 })

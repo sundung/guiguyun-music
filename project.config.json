@@ -4,10 +4,6 @@
     "ignore": [
       {
         "type": "folder",
-        "value": "miniprogram_npm"
-      },
-      {
-        "type": "folder",
         "value": "node_modules"
       }
     ]

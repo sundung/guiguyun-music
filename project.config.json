@@ -1,7 +1,16 @@
 {
   "description": "项目配置文件",
   "packOptions": {
-    "ignore": []
+    "ignore": [
+      {
+        "type": "folder",
+        "value": "miniprogram_npm"
+      },
+      {
+        "type": "folder",
+        "value": "node_modules"
+      }
+    ]
   },
   "setting": {
     "urlCheck": false,
@@ -25,7 +34,10 @@
     "useApiHook": true,
     "useApiHostProcess": true,
     "babelSetting": {
-      "ignore": [],
+      "ignore": [
+        "miniprogram_npm/*",
+        "node_modules/*"
+      ],
       "disablePlugins": [],
       "outputPath": ""
     },

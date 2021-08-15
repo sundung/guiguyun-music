@@ -7,6 +7,8 @@ const appInstance = getApp();
 
 // 导入 事件发布npm包
 import PubSub from 'pubsub-js'
+// 导入时间格式化插件
+import dayjs from 'dayjs' 
 Page({
 
   /**
@@ -16,7 +18,10 @@ Page({
     isPlay:false, // 是否播放状态
     song:{}, // 歌曲详情对象
     musicId:'', //歌曲id
-    musicLink:'' // 歌曲连接
+    musicLink:'', // 歌曲连接
+    currentTime: '00:00',  // 实时时间
+    durationTime: '00:00', // 总时长
+    currentWidth: 0, // 实时进度条的宽度
   },
 
   /**
@@ -50,6 +55,19 @@ Page({
     this.backgroundAudioManager.onStop(() => {
       this.changePlayState(false);
     });
+    // 监听音乐实时播放的进度
+    this.backgroundAudioManager.onTimeUpdate(() => {
+      // console.log('总时长: ', this.backgroundAudioManager.duration);
+      // console.log('实时的时长: ', this.backgroundAudioManager.currentTime);
+      // 格式化实时的播放时间
+      let currentTime = dayjs(this.backgroundAudioManager.currentTime * 1000).format('mm:ss')
+      let currentWidth = this.backgroundAudioManager.currentTime/this.backgroundAudioManager.duration * 450;
+      this.setData({
+        currentTime,
+        currentWidth
+      })
+      
+    })
   },
   // 修改播放状态的功能函数
   changePlayState(isPlay){
@@ -69,8 +87,11 @@ Page({
   // 获取歌曲详情页面
   async getSongDetail(musicId){
     let data = await request('/song/detail',{ids:musicId})
+    // data.songs[0].dt 单位ms
+    let durationTime = dayjs(data.songs[0].dt).format('mm:ss');
     this.setData({
-      song:data.songs[0]
+      song: data.songs[0],
+      durationTime
     })
     // 动态设置导航标题
     wx.setNavigationBarTitle({

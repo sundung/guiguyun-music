@@ -45,9 +45,13 @@ Page({
       let {recommendList, index} = this.data;
       if(type == 'pre') { // 上一首
         console.log(type);
+        // 处理临界值,当前是第一首,点击上一首跳到数组最后一项
+        (index === 0) && (index = recommendList.length);
         index -= 1;
       }else {
         console.log(type);
+        // 处理临界值,当前是最后一首,点击下一首跳到数组第一项
+        (index === recommendList.length -1) && (index = -1);
         index += 1;
       }
       // 更新下标

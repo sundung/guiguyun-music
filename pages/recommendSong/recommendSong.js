@@ -1,6 +1,8 @@
 // pages/recommendSong/recommendSong.js
 // 导入网络请求
 import request from '../../api/request'
+// 导入 事件发布npm包
+import PubSub from 'pubsub-js'
 Page({
 
   /**
@@ -10,6 +12,7 @@ Page({
     day:'', // 日
     month:'', // 月
     recommendList:[], // 歌曲推荐列表数据
+    index:0, // 当前列表页数据的索引
   },
 
   /**
@@ -36,6 +39,28 @@ Page({
     })
     // 调用每日推荐歌曲列表数据
     this.getOneDayMusicList();
+    // 订阅 给songDetail页面的消息
+    PubSub.subscribe('switchType',(msg,type) => {
+      // 解构data 
+      let {recommendList, index} = this.data;
+      if(type == 'pre') { // 上一首
+        console.log(type);
+        index -= 1;
+      }else {
+        console.log(type);
+        index += 1;
+      }
+      // 更新下标
+      this.setData({
+        index
+      })
+      // 获取对应音乐的id 
+      let musicId = recommendList[index].id;
+      console.log(musicId)
+      // 发布消息(音乐id) 给songDetail 页面
+      PubSub.publish('musicId',musicId);
+    })
+    
   },
   // 获取每日推荐歌曲列表数据
   async getOneDayMusicList(){

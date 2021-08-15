@@ -4,6 +4,9 @@ import request from '../../api/request'
 
 // 获取全局实例
 const appInstance = getApp();
+
+// 导入 事件发布npm包
+import PubSub from 'pubsub-js'
 Page({
 
   /**
@@ -94,6 +97,24 @@ Page({
       this.backgroundAudioManager.pause();
     }
     
+  },
+  // PubSub.subscribe('MY TOPIC', mySubscriber)
+  // 点击上一首,下一首按钮事件
+  handleSwitchMusic(event){
+    
+    // 获取切歌的类型
+    let type = event.currentTarget.id;
+    // 订阅来自 recommendSong的页面消息
+    PubSub.subscribe('musicId', (msg,musicId)=>{
+       // 获取音乐详情信息
+       this.getSongDetail(musicId);
+       // 自动播放当前的音乐
+       this.musicControl(true, musicId);
+       // 取消订阅
+       PubSub.unsubscribe('musicId');
+    })
+    // 发布消息数据给recommendSong页面
+    PubSub.publish('switchType', type)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

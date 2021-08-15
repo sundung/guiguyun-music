@@ -1,0 +1,36 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/topList/topList",
+          "pathName": "pages/topList/topList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personalFM/personalFM",
+          "pathName": "pages/personalFM/personalFM",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/recommendSong/recommendSong",
+          "pathName": "pages/recommendSong/recommendSong",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

@@ -76,6 +76,13 @@ Page({
       searchList:[]
     })
   },
+  // 点击取消按钮返回视频页
+  goToVideo(){
+    wx.navigateBack({
+      delta: 1
+    });
+      
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

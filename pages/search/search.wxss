@@ -1,0 +1,81 @@
+.searchContainer {
+  padding: 0 20rpx;
+}
+.searchContainer .header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+.searchContainer .header .searchInput {
+  display: flex;
+  align-items: center;
+  width: 560rpx;
+  height: 60rpx;
+  background-color: #e5e5e5;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  padding: 0 15rpx;
+}
+.searchContainer .header .searchInput input {
+  margin-left: 20rpx;
+  outline: 0;
+  font-size: 26rpx;
+  flex: 1;
+}
+.searchContainer .header .searchInput .clear {
+  width: 60rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.searchContainer .header .cancel {
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.searchContainer .hotContainer {
+  margin-top: 60rpx;
+}
+.searchContainer .hotContainer .title {
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.searchContainer .hotContainer .hotList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.searchContainer .hotContainer .hotList .hotItem {
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+}
+.searchContainer .hotContainer .hotList .hotItem .order {
+  margin-right: 10rpx;
+}
+.searchContainer .hotContainer .hotList .hotItem .iconImg {
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin-left: 10rpx;
+}
+.searchContainer .showSearchContent {
+  color: red;
+}
+.searchContainer .showSearchContent .searchContent {
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid red;
+}
+.searchContainer .showSearchContent .searchList {
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.searchContainer .showSearchContent .searchList .searchItem {
+  display: flex;
+}
+.searchContainer .showSearchContent .searchList .searchItem .content {
+  flex: 1;
+  border-bottom: 1px solid red;
+  margin-left: 10rpx;
+}

@@ -1,0 +1,85 @@
+.searchContainer {
+    padding: 0 20rpx;
+    // 头部区域
+    .header {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20rpx;
+        .searchInput {
+            display: flex;
+            align-items: center;
+            width: 560rpx;
+            height: 60rpx;
+            background-color: #e5e5e5;
+            line-height: 60rpx;
+            border-radius: 30rpx;
+            padding: 0 15rpx;
+            input {
+                margin-left: 20rpx;
+                outline:0;
+                font-size: 26rpx;
+                flex: 1;
+            }
+            .clear {
+                width: 60rpx;
+                height: 80rpx;
+                text-align: center;
+                line-height: 80rpx;
+            }
+        }
+        .cancel {
+            height: 60rpx;
+            line-height: 60rpx;
+        }
+    }
+    // 热搜榜
+    .hotContainer {
+        margin-top: 60rpx;
+        .title {
+            height: 80rpx;
+            line-height: 80rpx;
+            border-bottom: 1rpx solid #ccc;
+        }
+        .hotList {
+            display: flex;
+            flex-wrap: wrap;
+            .hotItem {
+                width: 50%;
+                height: 80rpx;
+                line-height: 80rpx;
+                font-size: 26rpx;
+                .order {
+                    margin-right: 10rpx;
+                }
+                .iconImg {
+                    width: 30rpx;
+                    height: 30rpx;
+                    vertical-align: middle;
+                    margin-left: 10rpx;
+                }
+            }
+        }
+    } 
+    // 搜索内容展示区域
+    .showSearchContent {
+        color: red;
+        .searchContent {
+            height: 80rpx;
+            line-height: 80rpx;
+            border-bottom: 1px solid red;
+        }
+        .searchList {
+            height: 80rpx;
+            line-height: 80rpx;
+            .searchItem {
+                display: flex;
+                .content {
+                    flex: 1;
+                    border-bottom: 1px solid red;
+                    margin-left: 10rpx;
+                }
+            }
+            
+        }
+    }
+}

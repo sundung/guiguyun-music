@@ -124,6 +124,13 @@ Page({
     // 再次发请求，获取最新的视频列表数据
     this.getVideoList(this.data.navId);
   },
+  // 点击搜索框跳转到搜索页面
+  goToSearch(){
+    wx.navigateTo({
+      url: '/pages/search/search'
+    });
+      
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

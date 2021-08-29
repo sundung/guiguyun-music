@@ -1,49 +1,34 @@
-// pages/topList/topList.js
-// 导入网络请求
-import request from '../../api/request'
+import request from "../../api/request"
+
+// pages/topListDetail/topListDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    topList:[], // 排行榜数据
-    songTypeList:[], // 曲风榜
     id:'', // 榜单id
+    songDetail:[], // 歌曲详情
+    bgcImage:'',// 背景图
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getTopList();
+    console.log(options)
+    this.setData({
+      id:options.id
+    })
+    this.getTopListDetail()
   },
-  async getTopList(){
-    let data = await request('/toplist/detail');
+  async getTopListDetail(){
+    let data = await request('/playlist/detail',{id:this.data.id})
     console.log(data)
     this.setData({
-      topList:data.list.slice(0,4)
+      bgcImage:data.playlist.coverImgUrl,
+      songDetail:data.playlist.tracks 
     })
-    // 判断当前数组的长度不够三整除就祛除
-    if(data.list.slice(4).length % 3 !== 0) {
-      var temp = data.list.slice(4).length % 3 
-      var result = data.list.slice(4,-temp)
-    }
-      this.setData({
-        songTypeList:result
-      })
-  },
-   goToListDetail(item){
-      // 获取 id
-    console.log(item)
-    this.setData({
-      id:item.currentTarget.dataset.song.id
-    })
-    wx.navigateTo({
-      url: '/pages/topListDetail/topListDetail?id='+ this.data.id,
-     
-    });
-      
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

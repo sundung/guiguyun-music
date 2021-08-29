@@ -1,0 +1,21 @@
+<!--pages/topListDetail/topListDetail.wxml-->
+<view class="topListDetailContainer">
+    <view class="bgc">
+        <image class="" src="{{bgcImage}}" />
+    </view>
+    <view class="songdetail">
+        <!-- 歌曲列表 -->
+    <scroll-view class="musicListScrollContainer" scroll-y="false">
+        <view class="scrollItem" wx:for="{{songDetail}}" wx:key="id" data-song='{{item}}' bindtap="goToMusicDetail">
+            <view class="index">{{index + 1}}</view>
+            <image class="image" src="{{item.al.picUrl}}" />
+            <view class="musicInfo">
+                <text class="musicName">{{item.name}}</text>
+                <text class="author">{{item.ar[0].name}}</text>
+            </view>
+            <text class="iconfont icon-gengduo"></text>
+        </view>
+    </scroll-view>
+          
+    </view>
+</view>

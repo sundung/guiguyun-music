@@ -1,6 +1,6 @@
 <!--pages/topList/topList.wxml-->
 <view class="topListContainer">
-    <view class="topListContent" wx:for="{{topList}}" wx:key="name" >
+    <view class="topListContent" wx:for="{{topList}}" wx:key="name" bindtap="goToListDetail" data-song='{{item}}'>
         <!-- 时间 -->
         <view class="updateFrequency">{{item.updateFrequency}}</view>
         <view class="left">

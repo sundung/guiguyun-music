@@ -41,6 +41,18 @@
           "pathName": "pages/video/video",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/personal/personal",
+          "pathName": "pages/personal/personal",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/topListDetail/topListDetail",
+          "pathName": "pages/topListDetail/topListDetail",
+          "query": "id=19723756",
+          "scene": null
         }
       ]
     }
